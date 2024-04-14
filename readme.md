@@ -23,3 +23,8 @@ To do:
 -Add vulnerabilities
 -Export of student records/achievements/account data
 -deploy in docker
+
+##vulnerabilities##
+
+1. Weak admin credentials
+2. Weak credential storage
