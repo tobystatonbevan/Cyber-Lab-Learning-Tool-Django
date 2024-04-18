@@ -1,17 +1,17 @@
 {% extends "base.html" %}
 
 {% block title %}
-Vulnerabilites
+Vulnerabilities
 {% endblock title %}
 
 {% block page_content %}
-<h1>This site contains the following vulnerabilites:</h1>
+<h1>This site contains the following vulnerabilities:</h1>
 <table>
     <tr>
         <th>Vulnerability</th>
         <th>Description</th>
     </tr>
-    {% for vuln in vulnerabilites %}
+    {% for vuln in vulnerabilities %}
         <tr>
             <th>{{ vuln.title }}</th>
             <th>{{ vuln.description }}</th>
