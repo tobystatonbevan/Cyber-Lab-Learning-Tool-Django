@@ -1,3 +1,7 @@
 from django.contrib import admin
+from pages.models import Vulnerability
 
-# Register your models here.
+class VulnerabilityAdmin(admin.ModelAdmin):
+    pass
+
+admin.site.register(Vulnerability, VulnerabilityAdmin)

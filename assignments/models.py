@@ -1,7 +1,7 @@
 from django.db import models
 
-class Lesson(models.Model):
+class Assignment(models.Model):
     title = models.CharField(max_length=140)
     description = models.TextField()
     technology = models.CharField(max_length=140)
-    image = models.FileField(upload_to="lesson_images/",blank=True)
+    image = models.FileField(upload_to="assignment_images/",blank=True)

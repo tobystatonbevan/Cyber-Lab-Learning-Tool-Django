@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}
+Vulnerabilites
+{% endblock title %}
+
+{% block page_content %}
+<h1>This site contains the following vulnerabilites:</h1>
+<table>
+    <tr>
+        <th>Vulnerability</th>
+        <th>Description</th>
+    </tr>
+    {% for vuln in vulnerabilites %}
+        <tr>
+            <th>{{ vuln.title }}</th>
+            <th>{{ vuln.description }}</th>
+        </tr>
+    {% endfor %}
+</table>
+</div>
+{% endblock %}

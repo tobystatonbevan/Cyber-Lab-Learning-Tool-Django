@@ -24,4 +24,5 @@ urlpatterns = [
     path("",include("pages.urls")),
     path("tasks/",include("tasks.urls")),
     path("lessons/",include("lessons.urls")),
+    path("assignments/",include("assignments.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 

@@ -1,22 +1,22 @@
 {% extends "base.html" %}
 
 {% block title %}
-Lesson Index
+Assignment Index
 {% endblock title %}
 
 {% block page_content %}
-<h1>Lessons</h1>
+<h1>Assignments</h1>
 <div class="row">
-{% for lesson in lessons %}
+{% for assignment in assignments %}
     <div class="col-md-4">
         <div class="card mb-2">
-            {% if lesson.image %}
-                <img class="card-img-top" src="{{ lesson.image.url }}">
+            {% if assignment.image %}
+                <img class="card-img-top" src="{{ assignment.image.url }}">
             {% endif %}
             <div class="card-body">
-                <h5 class="card-title">{{ lesson.title }}</h5>
-                <p class="card-text">{{ lesson.description }}</p>
-                <a href="{% url 'lesson_detail' lesson.pk %}"
+                <h5 class="card-title">{{ assignment.title }}</h5>
+                <p class="card-text">{{ assignment.description }}</p>
+                <a href="{% url 'assignment_detail' assignment.pk %}"
                    class="btn btn-primary">
                     Read More
                 </a>

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ assignment.title }} Detail
+{% endblock title %}
+
+{% block page_content %}
+<h1>{{ assignment.title }}</h1>
+<div class="row">
+    <div class="col-md-8">
+        {% if assignment.image %}
+                <img class="card-img-top" src="{{ assignment.image.url }}">
+            {% endif %}
+    </div>
+    <div class="col-md-4">
+        <h5>About the assignment:</h5>
+        <p>{{ assignment.description }}</p>
+        <br>
+        <h5>Technology used:</h5>
+        <p>{{ assignment.technology }}</p>
+    </div>
+</div>
+{% endblock page_content %}
