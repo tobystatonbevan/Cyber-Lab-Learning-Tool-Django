@@ -28,3 +28,38 @@ To do:
 
 1. Weak admin credentials
 2. Weak credential storage
+
+##To configure on an Apache server##
+(pip also required)
+sudo apt install apache2
+sudo apt install libapache-mod-wsgi
+Create venv
+source venv/bin/activate
+pip install -r requirement.txt in venv
+git repo clone
+set static ip
+allow host
+append to /etc/apache2/sites-available/000-default.conf:
+```
+    Alias /static /home/user/project/static
+    <Directory /home/user/project/static>
+        Require all granted
+    </Directory>
+
+    Directory /home/user/project/myproject>
+        <Files wsgi.py>
+            Require all granted
+        </Files>
+    </Directory>
+
+    WSGIDaemonProcess project python-home=/home/user/project/myprojectenv python-path=/home/user/project
+    WSGIProcessGroup project
+    WSGIScriptAlias / /home/user/project/myproject/wsgi.py
+```
+sudo chmod 664 /home/user/project/db.sqlite3
+sudo chown :www-data /home/user/project/db.sqlite3
+sudo chown :www-data /home/user/project
+sudo chmod 755 /home/user (or 655 and make www-data an owner)
+sudo ufw allow 'Apache Full'
+sudo apache2ctl configtest
+sudo systemctl restart apache2
