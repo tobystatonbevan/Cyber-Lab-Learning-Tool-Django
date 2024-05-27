@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'tasks.apps.TasksConfig',
     'assignments.apps.AssignmentsConfig',
     'lessons.apps.LessonsConfig',
+    'accounts.apps.AccountsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
