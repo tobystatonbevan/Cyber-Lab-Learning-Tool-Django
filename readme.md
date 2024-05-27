@@ -63,3 +63,13 @@ sudo chmod 755 /home/user (or 655 and make www-data an owner)
 sudo ufw allow 'Apache Full'
 sudo apache2ctl configtest
 sudo systemctl restart apache2
+in settings.py, add STATIC_ROOT to Apache directory for static (/var/www/html/static)
+in VM; sudo /home/user/venv/bin/python manage.py collectstatic
+in VM; sudo nano /etc/apache2/sites-available/000-default.conf
+alter to:
+```
+Alias /static /var/www/html/static
+    <Directory /var/www/html/static>
+        Require all granted
+    </Directory>
+```
