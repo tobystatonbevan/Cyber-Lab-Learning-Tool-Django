@@ -8,6 +8,8 @@ Students should be frequently reminded of the vulnerbility of this web service a
 
 The web service is intended to be spun up and replaced quickly and easily, as (hopefully) the vulnerabilities should mean that it gets broken or altered regularly. Tutors should note this, and if using the sevice for assessments to ensure that results are recorded away from the web service. Students should not assume that their work or account will be there when they return, and should behave accordingly.
 
+PLEASE NOTE: the SECRET_KEY is not obscured in any way from this repo, so if you intend to run this in any production environment outside of a segmented network you should rotate this  
+
 ##content##
 
 Home page: home page and general content pages for cyber lab
@@ -16,13 +18,13 @@ Tasks: lab activities to be completed away from cyber lab (virtual box, etc)
 
 ##TO DO##
 
-To do:
--sign up/log in
--Add lessons
--Add tasks
--Add vulnerabilities
--Export of student records/achievements/account data
--deploy in docker
+To do:  
+-sign up/log in  
+-Add lessons  
+-Add tasks  
+-Add vulnerabilities  
+-Export of student records/achievements/account data  
+-deploy in docker  
 
 ##vulnerabilities##
 
