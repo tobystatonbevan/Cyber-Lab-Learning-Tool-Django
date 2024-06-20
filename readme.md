@@ -31,17 +31,18 @@ To do:
 1. Weak admin credentials
 2. Weak credential storage
 
-##To configure on an Apache server##
-(pip also required)
-sudo apt install apache2
-sudo apt install libapache-mod-wsgi
-Create venv
-source venv/bin/activate
-pip install -r requirement.txt in venv
-git repo clone
-set static ip
-allow host
-append to /etc/apache2/sites-available/000-default.conf:
+##To configure on an Apache server##  
+
+(pip also required)   
+sudo apt install apache2  
+sudo apt install libapache-mod-wsgi  
+Create venv  
+source venv/bin/activate  
+pip install -r requirement.txt in venv  
+git repo clone  
+set static ip  
+allow host  
+append to /etc/apache2/sites-available/000-default.conf:  
 ```
     Alias /static /home/user/project/static
     <Directory /home/user/project/static>
@@ -58,17 +59,17 @@ append to /etc/apache2/sites-available/000-default.conf:
     WSGIProcessGroup project
     WSGIScriptAlias / /home/user/project/myproject/wsgi.py
 ```
-sudo chmod 664 /home/user/project/db.sqlite3
-sudo chown :www-data /home/user/project/db.sqlite3
-sudo chown :www-data /home/user/project
-sudo chmod 755 /home/user (or 655 and make www-data an owner)
-sudo ufw allow 'Apache Full'
-sudo apache2ctl configtest
-sudo systemctl restart apache2
-in settings.py, add STATIC_ROOT to Apache directory for static (/var/www/html/static)
-in VM; sudo /home/user/venv/bin/python manage.py collectstatic
-in VM; sudo nano /etc/apache2/sites-available/000-default.conf
-alter to:
+sudo chmod 664 /home/user/project/db.sqlite3  
+sudo chown :www-data /home/user/project/db.sqlite3  
+sudo chown :www-data /home/user/project  
+sudo chmod 755 /home/user (or 655 and make www-data an owner)  
+sudo ufw allow 'Apache Full'  
+sudo apache2ctl configtest  
+sudo systemctl restart apache2  
+in settings.py, add STATIC_ROOT to Apache directory for static (/var/www/html/static)  
+in VM; sudo /home/user/venv/bin/python manage.py collectstatic  
+in VM; sudo nano /etc/apache2/sites-available/000-default.conf  
+alter to:  
 ```
 Alias /static /var/www/html/static
     <Directory /var/www/html/static>
