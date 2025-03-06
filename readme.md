@@ -1,5 +1,3 @@
-An intentionally vulnerable learning management system (LMS)
-
 ##introduction to Cyber Lab##
 
 Django based vulnerable webservice. This is a web service intended to be hosted locally in a university cyber lab. The intention of the cyber lab is two fold; one, this tool is to host a series of learning materials and activities for students to complete. Two, this web service is deliberately vulnerable so that it may gather "real" data from student usage and exploitation of this asset can be an end of module activity for students
